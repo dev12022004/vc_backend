@@ -31,10 +31,6 @@ public class VendorService {
         return vendorRepository.findByType(type);
     }
 
-    public List<Vendor> addVendors(List<Vendor> vendors) {
-        return vendorRepository.saveAll(vendors);
-    }
-
     public Vendor addVendor(Vendor vendor) {
         return vendorRepository.save(vendor);
     }
@@ -45,7 +41,6 @@ public class VendorService {
         vendor.setType(vendorDetails.getType());
         vendor.setContractPeriod(vendorDetails.getContractPeriod());
         vendor.setContractEnding(vendorDetails.getContractEnding());
-        vendor.setLogo(vendorDetails.getLogo());
         return vendorRepository.save(vendor);
     }
 

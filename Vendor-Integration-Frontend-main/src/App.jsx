@@ -1,12 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar.jsx';
-import Home from './components/Home.jsx';
-import Vendors from './components/Vendors.jsx';
-import Footer from './components/Footer.jsx';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
-import Transactions from './components/Transactions.jsx';
+import Footer from './components/Footer.jsx';
+import Home from './components/Home.jsx';
+import Navbar from './components/Navbar.jsx';
 import TransactionDetails from './components/TransactionDetails.jsx';
+import Transactions from './components/Transactions.jsx';
+import Vendors from './components/Vendors.jsx';
 
 function App() {
   return (
@@ -16,9 +16,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/vendors" element={<Vendors />} />
-          <Route path="/transactions" element={<Transactions/>} />
+          <Route path="/transactions" element={<Transactions />} />
           <Route path="/transaction/:id" element={<TransactionDetails />} />
-          <Route path="/analytics" element={<TransactionDetails />} />  
+          <Route path="/analytics" element={<TransactionDetails />} />
         </Routes>
         <Footer />
       </div>

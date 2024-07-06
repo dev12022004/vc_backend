@@ -11,7 +11,7 @@ public class Vendor {
     private String type;
     private String contractPeriod;
     private String contractEnding;
-    private String logo;
+    //private String logo;
 
     // Getters and Setters
 
@@ -55,11 +55,11 @@ public class Vendor {
         this.contractEnding = contractEnding;
     }
 
-    public String getLogo() {
-        return logo;
-    }
+    // public String getLogo() {
+    //     return logo;
+    // }
 
-    public void setLogo(String logo) {
-        this.logo = logo;
-    }
+    // public void setLogo(String logo) {
+    //     this.logo = logo;
+    // }
 }

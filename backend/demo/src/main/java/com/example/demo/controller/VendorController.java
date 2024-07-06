@@ -46,9 +46,9 @@ public class VendorController {
     }
 
     @PostMapping
-    public ResponseEntity<List<Vendor>> addVendors(@RequestBody List<Vendor> vendors) {
-        List<Vendor> createdVendors = vendorService.addVendors(vendors);
-        return ResponseEntity.ok(createdVendors);
+    public ResponseEntity<Vendor> addVendor(@RequestBody Vendor vendor) {
+        Vendor createdVendor = vendorService.addVendor(vendor);
+        return ResponseEntity.ok(createdVendor);
     }
 
     @PutMapping("/{id}")
