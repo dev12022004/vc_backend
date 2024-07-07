@@ -60,8 +60,19 @@ public class TransactionController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteTransaction(@PathVariable int id) {
+    public ResponseEntity<Void> deleteTransaction(@PathVariable String id) {
         transactionService.deleteTransaction(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/{id}/attachments")
+    public ResponseEntity<Transaction> addAttachment(@PathVariable int id, @RequestParam String attachmentName, @RequestParam String url) {
+        Transaction updatedTransaction = transactionService.addAttachment(id, attachmentName, url);
+
+        if (updatedTransaction != null) {
+            return ResponseEntity.ok(updatedTransaction);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 }

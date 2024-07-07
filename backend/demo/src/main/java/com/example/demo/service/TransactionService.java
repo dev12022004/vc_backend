@@ -51,9 +51,20 @@ public class TransactionService {
             return null; // Or throw an exception
         }
     }
-
-    /* 
-    public void deleteTransaction(int id) {
+ 
+    public void deleteTransaction(String id) {
         transactionRepository.deleteAllById(id);
-    }*/
+    }
+
+    public Transaction addAttachment(int id, String attachmentName, String url) {
+        Optional<Transaction> optionalTransaction = transactionRepository.findById(id);
+
+        if (optionalTransaction.isPresent()) {
+            Transaction transaction = optionalTransaction.get();
+            transaction.setAttachment(attachmentName, url);
+            return transactionRepository.save(transaction);
+        } else {
+            return null; // Or throw an exception
+        }
+    }
 }
