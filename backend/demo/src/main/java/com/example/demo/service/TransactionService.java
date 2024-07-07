@@ -52,12 +52,12 @@ public class TransactionService {
         }
     }
  
-    public void deleteTransaction(String id) {
-        transactionRepository.deleteAllById(id);
+    public void deleteTransaction(int id) {
+       // transactionRepository.deleteById(id);
     }
 
-    public Transaction addAttachment(int id, String attachmentName, String url) {
-        Optional<Transaction> optionalTransaction = transactionRepository.findById(id);
+    public Transaction addAttachment(String id, String attachmentName, String url) {
+        Optional<Transaction> optionalTransaction = transactionRepository.findByTransactionId(id);
 
         if (optionalTransaction.isPresent()) {
             Transaction transaction = optionalTransaction.get();
